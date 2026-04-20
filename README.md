@@ -1,6 +1,8 @@
+![banner](https://i.imgur.com/44br56g.png)
+
 # On Causal Discovery for Deep Learning in a Biological Context (Bachelor Thesis)
 
-Research codebase and thesis resources exploring causal discovery algorithms on the hidden states and outputs of deep learning models trained to predict high/low protein-to-mRNA ratios (PTRs) in different tissues based on cDNA sequences. 
+Research codebase and thesis resources exploring causal discovery algorithms on the hidden states and outputs of deep learning models trained to predict high/low protein-to-mRNA ratios (PTRs) in different tissues based on cDNA sequences.
 
 This repository was created as part of the bachelor thesis by **Trayan Tsonev** at the **University of Vienna, 2024** (Supervised by Assoz. Prof. Dipl.-Ing. Dr.techn. Sebastian Tschiatschek).
 
@@ -40,6 +42,7 @@ PYTHONPATH=src python src/main.py \
 ```
 
 Notes:
+
 - The script trains 4 unidirectional GRUs (32 units each).
 - The RNN's output is fed to a dense architecture to classify the binary PTRs (high/low).
 - A logger function simultaneously splits the RNN output into equal segments, calculating the means for causal inference analysis.
