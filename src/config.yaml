@@ -1,0 +1,31 @@
+data:
+  normalize: False
+
+model:
+  num_rnn_layers: 4
+  dim_latent: 32
+  loss: 'bce'
+  model_file: 'model'
+  dim_tissue_embedding: 2
+  bce_linear_dim: 64
+  loss_cont_weight: 0.05
+
+optimizer:
+  learning_rate: 0.001
+  max_epochs: 10
+  scheduler_mode: "min"
+  scheduler_factor: 0.5
+  scheduler_patience: 2
+  scheduler_min_lr: 0.000001
+
+callbacks:
+  early_stopping_patience: 5
+
+setup:
+  seed: 111
+  batch_size: 64
+  num_workers: 2
+  validation:
+    method: 'split'
+    frac_train: 0.8
+

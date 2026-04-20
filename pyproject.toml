@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ba-rnn"
+version = "0.1.0"
+description = "Bachelor thesis project for RNA sequence modeling with an RNN."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "lightning>=2.0.0,<2.5.0",
+  "numpy>=1.24.0,<2.0.0",
+  "PyYAML>=6.0",
+  "scikit-learn>=1.2.0,<1.4.0",
+  "torch>=2.0.0,<2.3.0",
+  "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "ruff",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+extend-exclude = ["notebooks", "*.ipynb"]
+
+[tool.ruff.lint]
+ignore = ["E741"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
